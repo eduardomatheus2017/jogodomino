@@ -1,5 +1,7 @@
 
 import java.util.ArrayList;
+import java.util.Random;
+import jogodominoo.Domino;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,15 +20,28 @@ public class mao extends javax.swing.JFrame {
      */
     public mao() {
         initComponents();
-        	ArrayList lista	= new ArrayList();
+        	ArrayList <Domino> lista	= new ArrayList();
               for (int i = 1; i <= 28; i++){
-                  lista.add(i);
+                  Domino domino;
+                  domino= new Domino();
+                  domino.setId(i);
+                  lista.add(domino);
               }
-              for (int i=0;i<28;i++){
-              
-              
-                  System.out.println(lista.get(i));
+              ArrayList sorteio= new ArrayList();
+              Random gerador = new Random();
+              for (int i=0;i<7;i++){
+                            
+                  int math=(Math.abs(gerador.nextInt()%28+1));
+                  
+                  while(sorteio.contains(math)){
+                      math=(Math.abs(gerador.nextInt()%28+1));
+                  }
+                  
+                  sorteio.add(math);
+                  System.out.println(math)   ;
+                  
                 }
+              
     }
 
     /**
@@ -38,45 +53,122 @@ public class mao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        pedra4 = new javax.swing.JButton();
+        pedra3 = new javax.swing.JButton();
+        pedra7 = new javax.swing.JButton();
+        pedra6 = new javax.swing.JButton();
+        pedra2 = new javax.swing.JButton();
+        pedra5 = new javax.swing.JButton();
+        pedra1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/1.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        pedra4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/1.png"))); // NOI18N
+        pedra4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                pedra4ActionPerformed(evt);
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/2.png"))); // NOI18N
+        pedra3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/2.png"))); // NOI18N
+
+        pedra7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/3.png"))); // NOI18N
+        pedra7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pedra7ActionPerformed(evt);
+            }
+        });
+
+        pedra6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/4.png"))); // NOI18N
+
+        pedra2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/5.png"))); // NOI18N
+        pedra2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pedra2ActionPerformed(evt);
+            }
+        });
+
+        pedra5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/6.png"))); // NOI18N
+        pedra5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pedra5ActionPerformed(evt);
+            }
+        });
+
+        pedra1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/6.png"))); // NOI18N
+        pedra1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pedra1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pedra3, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pedra6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pedra4, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pedra7, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pedra2, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pedra5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(pedra1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(182, 182, 182)
-                .addComponent(jButton2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(194, 194, 194)
+                        .addComponent(pedra1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pedra2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(pedra5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pedra3)
+                    .addComponent(pedra6))
                 .addGap(6, 6, 6)
-                .addComponent(jButton1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pedra4)
+                    .addComponent(pedra7))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void pedra4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_pedra4ActionPerformed
+
+    private void pedra7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pedra7ActionPerformed
+
+    private void pedra2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pedra2ActionPerformed
+
+    private void pedra5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pedra5ActionPerformed
+
+    private void pedra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pedra1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,8 +206,13 @@ public class mao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton pedra1;
+    private javax.swing.JButton pedra2;
+    private javax.swing.JButton pedra3;
+    private javax.swing.JButton pedra4;
+    private javax.swing.JButton pedra5;
+    private javax.swing.JButton pedra6;
+    private javax.swing.JButton pedra7;
     // End of variables declaration//GEN-END:variables
 
 }
