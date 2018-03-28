@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package jogodominoo;
-class Domino{
+public class Domino{
     public String nome;
     public String formula;
     public String id; 
