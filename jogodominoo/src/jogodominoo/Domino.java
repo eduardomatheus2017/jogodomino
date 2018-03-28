@@ -7,7 +7,7 @@ package jogodominoo;
 public class Domino{
     public String nome;
     public String formula;
-    public String id; 
+    public int id; 
 
     public Domino() {
     }
@@ -28,11 +28,11 @@ public class Domino{
         this.formula = formula;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
     
