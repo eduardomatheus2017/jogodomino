@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.ImageIcon;
 import jogodominoo.Domino;
 
 /*
@@ -30,8 +31,9 @@ public class mao extends javax.swing.JFrame {
               ArrayList sorteio= new ArrayList();
               Random gerador = new Random();
               for (int i=0;i<7;i++){
+                  
                             
-                  int math=(Math.abs(gerador.nextInt()%28+1));
+                  int math=(Math.abs((gerador.nextInt()%28)+1));
                   
                   while(sorteio.contains(math)){
                       math=(Math.abs(gerador.nextInt()%28+1));
@@ -40,8 +42,39 @@ public class mao extends javax.swing.JFrame {
                   sorteio.add(math);
                   System.out.println(math)   ;
                   
-                }
+                }      
+              String nomeimg = String.valueOf( sorteio.get(0));
+              nomeimg+=".png";
               
+              System.out.println(nomeimg);
+              
+               ImageIcon img = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
+               pedra1.setIcon(img);
+               nomeimg = String.valueOf( sorteio.get(1));
+              nomeimg+=".png";
+              System.out.println(nomeimg);
+               ImageIcon img2 = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
+               pedra2.setIcon(img2);
+                 nomeimg = String.valueOf( sorteio.get(2));
+              nomeimg+=".png";
+              System.out.println(nomeimg);
+               ImageIcon img3 = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
+               pedra4.setIcon(img3);
+                nomeimg = String.valueOf( sorteio.get(3));
+              nomeimg+=".png";
+              System.out.println(nomeimg);
+               ImageIcon img4 = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
+               pedra5.setIcon(img4);
+                  nomeimg = String.valueOf( sorteio.get(4));
+              nomeimg+=".png";
+              System.out.println(nomeimg);
+               ImageIcon img5 = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
+               pedra6.setIcon(img5);
+                 nomeimg = String.valueOf( sorteio.get(5));
+              nomeimg+=".png";
+              System.out.println(nomeimg);
+               ImageIcon img6 = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
+               pedra7.setIcon(img6);
     }
 
     /**
