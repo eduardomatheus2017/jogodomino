@@ -1,3 +1,8 @@
+
+import java.util.ArrayList;
+import java.util.Random;
+import jogodominoo.Domino;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +20,36 @@ public class tabuleiro extends javax.swing.JFrame {
      */
     public tabuleiro() {
         initComponents();
+        ArrayList <Domino> lista	= new ArrayList();
+              for (int i = 1; i <= 14; i++){
+                  Domino domino;
+                  domino= new Domino();
+                  domino.setId(i);
+                  lista.add(domino);
+              }
+              ArrayList sorteio= new ArrayList();
+              Random gerador = new Random();
+              for (int i=0;i<14;i++){
+                  
+                            
+                  int math=(Math.abs((gerador.nextInt()%14)+1));
+                  
+                  while(sorteio.contains(math)){
+                      math=(Math.abs(gerador.nextInt()%14+1));
+                  }
+                  
+                  sorteio.add(math);
+                  System.out.println(math)   ;
+                  
+                  if (1 == sorteio){
+              
+                      System.out.println("A peça inicial está na lista");
+            }
+                }    
+    
+              
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
