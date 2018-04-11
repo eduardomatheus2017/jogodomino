@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import jogodominoo.Domino;
 
 /*
@@ -19,31 +20,36 @@ public class mao extends javax.swing.JFrame {
     /**
      * Creates new form mao
      */
+    ArrayList sorteio;
     public mao() {
+        
         initComponents();
         	ArrayList <Domino> lista	= new ArrayList();
-              for (int i = 1; i <= 28; i++){
-                  Domino domino;
-                  domino= new Domino();
-                  domino.setId(i);
-                  lista.add(domino);
-              }
-              ArrayList sorteio= new ArrayList();
-              Random gerador = new Random();
-              for (int i=0;i<7;i++){
-                  
-                            
-                  int math=(Math.abs((gerador.nextInt()%28)+1));
-                  
-                  while(sorteio.contains(math)){
-                      math=(Math.abs(gerador.nextInt()%28+1));
-                  }
-                  
-                  sorteio.add(math);
-                  System.out.println(math)   ;
-                  
-                }      
-              String nomeimg = String.valueOf( sorteio.get(0));
+//              for (int i = 1; i <= 28; i++){
+//                  Domino domino;
+//                  domino= new Domino();
+//                  domino.setId(i);
+//                  lista.add(domino);
+//              }
+//                sorteio=new ArrayList();
+//              Random gerador = new Random();
+//              for (int i=0;i<7;i++){
+//                  
+//                            
+//                  int math=(Math.abs((gerador.nextInt()%28)+1));
+//                  
+//                  while(sorteio.contains(math)){
+//                      math=(Math.abs(gerador.nextInt()%28+1));
+//                  }
+//                  
+//                  sorteio.add(math);
+//                  System.out.println(math)   ;
+//                  
+//                }      
+  
+    }
+    public void Colocarimg(){
+                      String nomeimg = String.valueOf( sorteio.get(0));
               nomeimg+=".png";
               
               System.out.println(nomeimg);
@@ -75,6 +81,70 @@ public class mao extends javax.swing.JFrame {
               System.out.println(nomeimg);
                ImageIcon img6 = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
                pedra7.setIcon(img6);
+    }
+
+    public ArrayList getSorteio() {
+        return sorteio;
+    }
+
+    public void setSorteio(ArrayList sorteio) {
+        this.sorteio = sorteio;
+    }
+
+    public JButton getPedra1() {
+        return pedra1;
+    }
+
+    public void setPedra1(JButton pedra1) {
+        this.pedra1 = pedra1;
+    }
+
+    public JButton getPedra2() {
+        return pedra2;
+    }
+
+    public void setPedra2(JButton pedra2) {
+        this.pedra2 = pedra2;
+    }
+
+    public JButton getPedra3() {
+        return pedra3;
+    }
+
+    public void setPedra3(JButton pedra3) {
+        this.pedra3 = pedra3;
+    }
+
+    public JButton getPedra4() {
+        return pedra4;
+    }
+
+    public void setPedra4(JButton pedra4) {
+        this.pedra4 = pedra4;
+    }
+
+    public JButton getPedra5() {
+        return pedra5;
+    }
+
+    public void setPedra5(JButton pedra5) {
+        this.pedra5 = pedra5;
+    }
+
+    public JButton getPedra6() {
+        return pedra6;
+    }
+
+    public void setPedra6(JButton pedra6) {
+        this.pedra6 = pedra6;
+    }
+
+    public JButton getPedra7() {
+        return pedra7;
+    }
+
+    public void setPedra7(JButton pedra7) {
+        this.pedra7 = pedra7;
     }
 
     /**
