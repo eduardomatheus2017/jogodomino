@@ -18,6 +18,7 @@ public class tabuleiro extends javax.swing.JFrame {
     /**
      * Creates new form tabuleiro
      */
+    mao lixo;
     public tabuleiro() {
         initComponents();
         ArrayList <Domino> lista	= new ArrayList();
@@ -32,22 +33,28 @@ public class tabuleiro extends javax.swing.JFrame {
               for (int i=0;i<14;i++){
                   
                             
-                  int math=(Math.abs((gerador.nextInt()%14)+1));
+                  int math=(Math.abs(gerador.nextInt()%28)+1);
                   
                   while(sorteio.contains(math)){
-                      math=(Math.abs(gerador.nextInt()%14+1));
+                      math=(Math.abs(gerador.nextInt()%28)+1);
                   }
                   
                   sorteio.add(math);
                   System.out.println(math)   ;
                   
-                  if (1 == sorteio){
+                                 }  
+             
+    
+               if (sorteio.contains(1)){
               
                       System.out.println("A peça inicial está na lista");
             }
-                }    
-    
-              
+               
+               lixo = new mao();
+                lixo.setSorteio(sorteio);
+                lixo.Colocarimg();
+                lixo.setVisible(true);
+                
     }
     
 
