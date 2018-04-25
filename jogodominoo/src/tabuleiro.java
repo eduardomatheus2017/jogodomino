@@ -19,43 +19,73 @@ public class tabuleiro extends javax.swing.JFrame {
      * Creates new form tabuleiro
      */
     mao lixo;
+    mao max;
     public tabuleiro() {
         initComponents();
-        ArrayList <Domino> lista	= new ArrayList();
-              for (int i = 1; i <= 14; i++){
-                  Domino domino;
-                  domino= new Domino();
-                  domino.setId(i);
-                  lista.add(domino);
+        ArrayList <Domino> cafe= new ArrayList();
+              for (int i = 1; i <= 28; i++){
+                  Domino pedra;
+                  pedra= new Domino();
+                  pedra.setId(i);
+                  cafe.add(pedra);
               }
-              ArrayList sorteio= new ArrayList();
+              
+              ArrayList monte= new ArrayList();
               Random gerador = new Random();
-              for (int i=0;i<14;i++){
+              for (int i=0;i<28;i++){
                   
                             
                   int math=(Math.abs(gerador.nextInt()%28)+1);
                   
-                  while(sorteio.contains(math)){
+                  while(monte.contains(math)){
                       math=(Math.abs(gerador.nextInt()%28)+1);
                   }
                   
-                  sorteio.add(math);
+                  monte.add(math);
                   System.out.println(math)   ;
                   
                                  }  
-             
+              ArrayList mao1=new ArrayList();
+                for (int i=0;i<6;i++){ 
+                mao1.add(monte.remove(0));
+                }
+                ArrayList mao2=new ArrayList();
+                for (int i=0;i<6;i++){ 
+                mao2.add(monte.remove(0));
+                }
     
-               if (sorteio.contains(1)){
+               if (monte.contains(1)){
               
                       System.out.println("A peça inicial está na lista");
             }
                
                lixo = new mao();
-                lixo.setSorteio(sorteio);
+                lixo.setSorteio(mao1);
                 lixo.Colocarimg();
                 lixo.setVisible(true);
                 
-    }
+                max = new mao();
+                max.setSorteio(mao2);
+                max.Colocarimg();
+                max.setVisible(true);
+                
+                
+                
+                
+               
+                
+                
+                
+               
+                
+                } 
+                
+    
+   
+                  
+
+
+
     
 
     /**
