@@ -46,11 +46,14 @@ public class tabuleiro extends javax.swing.JFrame {
                   
                                  }  
               ArrayList mao1=new ArrayList();
-                for (int i=0;i<6;i++){ 
+                for (int i=1;i<=7;i++){ 
                 mao1.add(monte.remove(0));
+                
                 }
+                
+                
                 ArrayList mao2=new ArrayList();
-                for (int i=0;i<6;i++){ 
+                for (int i=1;i<=7;i++){ 
                 mao2.add(monte.remove(0));
                 }
     
@@ -68,7 +71,8 @@ public class tabuleiro extends javax.swing.JFrame {
                 max.setSorteio(mao2);
                 max.Colocarimg();
                 max.setVisible(true);
-                
+                 
+                contador.setText("O número de pedras no monte é "+monte.size() );
                 
                 
                 
@@ -97,50 +101,51 @@ public class tabuleiro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton5 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        contador = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/1.png"))); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        contador.setText("Contador");
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/monte.PNG"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/10.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-
-        jButton2.setText("jButton2");
-        getContentPane().add(jButton2);
-
-        jButton3.setText("jButton3");
-        getContentPane().add(jButton3);
-
-        jButton4.setText("jButton4");
-        getContentPane().add(jButton4);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jButton4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(241, 241, 241)
+                        .addComponent(contador)))
+                .addGap(644, 644, 644))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(contador)
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,10 +183,8 @@ public class tabuleiro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel contador;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
