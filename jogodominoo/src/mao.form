@@ -94,6 +94,9 @@
           <Image iconType="3" name="/jogodominoo/imagens/2.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pedra3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="pedra7">
       <Properties>
@@ -111,6 +114,9 @@
           <Image iconType="3" name="/jogodominoo/imagens/4.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pedra6ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="pedra2">
       <Properties>

@@ -21,10 +21,11 @@ public class mao extends javax.swing.JFrame {
      * Creates new form mao
      */
     ArrayList sorteio;
+    ArrayList <Domino> lista;
     public mao() {
         
         initComponents();
-        	ArrayList <Domino> lista	= new ArrayList();
+        	 lista	= new ArrayList();
 //              for (int i = 1; i <= 28; i++){
 //                  Domino domino;
 //                  domino= new Domino();
@@ -49,39 +50,82 @@ public class mao extends javax.swing.JFrame {
   
     }
     public void Colocarimg(){
-                      String nomeimg = String.valueOf( sorteio.get(0));
+              String nomeimg = String.valueOf( sorteio.get(0));
               nomeimg+=".png";
-              
+              Domino domino = new Domino();
+              domino.setNome(nomeimg);
+              //domino.setFormula();            
+              System.out.println(nomeimg);              
+              domino.setNn( new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg )) );
+              pedra1.setIcon(domino.getNn());  
+               
+               
+              nomeimg = String.valueOf( sorteio.get(1));
+              nomeimg+=".png";               
+              Domino domino1 = new Domino();
+              domino1.setNome(nomeimg);
               System.out.println(nomeimg);
-              
-               ImageIcon img = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
-               pedra1.setIcon(img);
-               nomeimg = String.valueOf( sorteio.get(1));
-              nomeimg+=".png";
+              domino1.setNn(new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg )));               
+              pedra2.setIcon(domino1.getNn()); 
+               
+              nomeimg = String.valueOf( sorteio.get(2));
+              nomeimg+=".png";              
+              Domino domino2 = new Domino();
+              domino2.setNome(nomeimg);
               System.out.println(nomeimg);
-               ImageIcon img2 = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
-               pedra2.setIcon(img2);
-                 nomeimg = String.valueOf( sorteio.get(2));
-              nomeimg+=".png";
+              domino2.setNn( new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg )));
+              pedra3.setIcon(domino2.getNn());
+               
+              nomeimg = String.valueOf( sorteio.get(3));                
+              nomeimg+=".png";                
+              Domino domino3 = new Domino();
+              domino3.setNome(nomeimg);
               System.out.println(nomeimg);
-               ImageIcon img3 = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
-               pedra4.setIcon(img3);
-                nomeimg = String.valueOf( sorteio.get(3));
-              nomeimg+=".png";
+              domino3.setNn( new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg )));
+              pedra4.setIcon(domino3.getNn());
+               
+              nomeimg = String.valueOf( sorteio.get(4));
+              nomeimg+=".png";              
+              Domino domino4 = new Domino();
+              domino4.setNome(nomeimg);
               System.out.println(nomeimg);
-               ImageIcon img4 = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
-               pedra5.setIcon(img4);
-                  nomeimg = String.valueOf( sorteio.get(4));
-              nomeimg+=".png";
+              domino4.setNn ( new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg )));
+              pedra5.setIcon(domino4.getNn());
+               
+              nomeimg = String.valueOf( sorteio.get(5));
+              nomeimg+=".png";              
+              Domino domino5 = new Domino();
+              domino5.setNome(nomeimg);
               System.out.println(nomeimg);
-               ImageIcon img5 = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
-               pedra6.setIcon(img5);
-                 nomeimg = String.valueOf( sorteio.get(5));
-              nomeimg+=".png";
+              domino5.setNn( new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg )));
+              pedra6.setIcon(domino5.getNn());
+               
+               
+              nomeimg = String.valueOf( sorteio.get(6));
+              nomeimg+=".png";             
+              Domino domino6 = new Domino();
+              domino6.setNome(nomeimg);
               System.out.println(nomeimg);
-               ImageIcon img6 = new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg ));
-               pedra7.setIcon(img6);
+              domino6.setNn( new ImageIcon( getClass().getResource( "jogodominoo/imagens/"+nomeimg )));
+              pedra7.setIcon(domino6.getNn());
+               
+            
+               
+               
+               
+               
+          
+               
+               
+             lista.add(domino);
+             lista.add(domino1);
+             lista.add(domino2);
+             lista.add(domino3);
+             lista.add(domino4);
+             lista.add(domino5);
+             lista.add(domino6);
     }
+    
 
     public ArrayList getSorteio() {
         return sorteio;
@@ -174,6 +218,11 @@ public class mao extends javax.swing.JFrame {
         });
 
         pedra3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/2.png"))); // NOI18N
+        pedra3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pedra3ActionPerformed(evt);
+            }
+        });
 
         pedra7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/3.png"))); // NOI18N
         pedra7.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +232,11 @@ public class mao extends javax.swing.JFrame {
         });
 
         pedra6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/4.png"))); // NOI18N
+        pedra6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pedra6ActionPerformed(evt);
+            }
+        });
 
         pedra2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jogodominoo/imagens/5.png"))); // NOI18N
         pedra2.addActionListener(new java.awt.event.ActionListener() {
@@ -255,23 +309,108 @@ public class mao extends javax.swing.JFrame {
 
     private void pedra4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra4ActionPerformed
         // TODO add your handling code here:
+             System.out.println("fui clicado");
+               for(int i=0;i<lista.size();i++){
+                 if (lista.get(i).getNn().equals(pedra4.getIcon())){
+                     if(lista.get(i).getNome().equals("1.png")){
+                         System.out.println("eu sou a pedra inicial");
+                         
+                     }else{
+                         System.out.println("eu não sou a pedra inicial");
+                     }
+                 }
+             }
     }//GEN-LAST:event_pedra4ActionPerformed
 
     private void pedra7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra7ActionPerformed
         // TODO add your handling code here:
+             System.out.println("fui clicado");
+             for(int i=0;i<lista.size();i++){
+                 if (lista.get(i).getNn().equals(pedra7.getIcon())){
+                     if(lista.get(i).getNome().equals("1.png")){
+                         System.out.println("eu sou a pedra inicial");
+                         
+                     }else{
+                         System.out.println("eu não sou a pedra inicial");
+                     }
+                 }
+             }
     }//GEN-LAST:event_pedra7ActionPerformed
 
     private void pedra2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra2ActionPerformed
         // TODO add your handling code here:
+             System.out.println("fui clicado");
+               for(int i=0;i<lista.size();i++){
+                 if (lista.get(i).getNn().equals(pedra2.getIcon())){
+                     if(lista.get(i).getNome().equals("1.png")){
+                         System.out.println("eu sou a pedra inicial");
+                         
+                     }else{
+                         System.out.println("eu não sou a pedra inicial");
+                     }
+                 }
+             }
     }//GEN-LAST:event_pedra2ActionPerformed
 
     private void pedra5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra5ActionPerformed
         // TODO add your handling code here:
+        System.out.println("fui clicado");
+          for(int i=0;i<lista.size();i++){
+                 if (lista.get(i).getNn().equals(pedra5.getIcon())){
+                     if(lista.get(i).getNome().equals("1.png")){
+                         System.out.println("eu sou a pedra inicial");
+                         
+                     }else{
+                         System.out.println("eu não sou a pedra inicial");
+                     }
+                 }
+             }
     }//GEN-LAST:event_pedra5ActionPerformed
 
     private void pedra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra1ActionPerformed
         // TODO add your handling code here:
+             System.out.println("fui clicado");
+               for(int i=0;i<lista.size();i++){
+                 if (lista.get(i).getNn().equals(pedra1.getIcon())){
+                     if(lista.get(i).getNome().equals("1.png")){
+                         System.out.println("eu sou a pedra inicial");
+                         
+                     }else{
+                         System.out.println("eu não sou a pedra inicial");
+                     }
+                 }
+             }
     }//GEN-LAST:event_pedra1ActionPerformed
+
+    private void pedra3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra3ActionPerformed
+        // TODO add your handling code here:
+         System.out.println("fui clicado");
+           for(int i=0;i<lista.size();i++){
+                 if (lista.get(i).getNn().equals(pedra3.getIcon())){
+                     if(lista.get(i).getNome().equals("1.png")){
+                         System.out.println("eu sou a pedra inicial");
+                         
+                     }else{
+                         System.out.println("eu não sou a pedra inicial");
+                     }
+                 }
+             }
+    }//GEN-LAST:event_pedra3ActionPerformed
+
+    private void pedra6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedra6ActionPerformed
+        // TODO add your handling code here:
+         System.out.println("fui clicado");
+           for(int i=0;i<lista.size();i++){
+                 if (lista.get(i).getNn().equals(pedra6.getIcon())){
+                     if(lista.get(i).getNome().equals("1.png")){
+                         System.out.println("eu sou a pedra inicial");
+                         
+                     }else{
+                         System.out.println("eu não sou a pedra inicial");
+                     }
+                 }
+             }
+    }//GEN-LAST:event_pedra6ActionPerformed
 
     /**
      * @param args the command line arguments
