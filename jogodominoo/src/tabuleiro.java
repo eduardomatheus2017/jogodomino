@@ -57,10 +57,8 @@ public class tabuleiro extends javax.swing.JFrame {
                 mao2.add(monte.remove(0));
                 }
     
-               if (monte.contains(1)){
               
-                      System.out.println("A peça inicial está na lista");
-            }
+               
                
                lixo = new mao();
                 lixo.setSorteio(mao1);
@@ -73,7 +71,30 @@ public class tabuleiro extends javax.swing.JFrame {
                 max.setVisible(true);
                  
                 contador.setText("O número de pedras no monte é "+monte.size() );
+                 if (monte.contains(1)){
+              
+                      System.out.println("A peça inicial está na lista");
+                      this.setTitle("Tabuleiro");
+                       lixo.setTitle("Mão1 Compre uma pedra ");
+                        max.setTitle("Mão2 Compre uma pedra ");
+                      
+            }else{
+                 
+               
+               if (mao1.contains(1)){
+              
+                      System.out.println("A pedra inicial esta na mao 1");
+                     this.setTitle("Tabuleiro");
+                       lixo.setTitle("Mão1 Começe jogando");
+                        max.setTitle("Mão2 ");
+            }else{
+                    System.out.println("A pedra inicial esta na mao 2");
+                   this.setTitle("Tabuleiro, ");
+                       lixo.setTitle("Mão1 ");
+                        max.setTitle("Mão2 Começe Jogando");
+               }
                 
+               }
                 
                 
                

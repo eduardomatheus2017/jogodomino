@@ -4,12 +4,25 @@
  * and open the template in the editor.
  */
 package jogodominoo;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 public class Domino{
     public String nome;
     public String formula;
     public int id; 
+    private ImageIcon Nn;
 
     public Domino() {
+    }
+
+    public ImageIcon getNn() {
+        return Nn;
+    }
+
+    public void setNn(ImageIcon Nn) {
+        this.Nn = Nn;
     }
 
     public String getNome() {
@@ -35,7 +48,7 @@ public class Domino{
     public void setId(int id) {
         this.id = id;
     }
-    
+
 }
 /**
  *
