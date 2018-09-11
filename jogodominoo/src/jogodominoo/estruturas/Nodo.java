@@ -5,6 +5,8 @@
  */
 package jogodominoo.estruturas;
 
+import jogodominoo.Domino;
+
 /** 
  * @author wdmatheus 
  * Classe que implementa e manipula nós da lista.
@@ -12,13 +14,13 @@ package jogodominoo.estruturas;
 public class Nodo {
 	private Nodo anterior;		
 	private Nodo proximo;
-	private String valor;		
+	private Domino valor;		
 	//Define valor do nó.
-	public void setValor(String valor) {
+	public void setValor(Domino valor) {
 		this.valor = valor;
 	}
 	//Retorna valor do nó.
-	public String getValor() {
+	public Domino getValor() {
 		return valor;
 	}
 	//Define nó anterior.
